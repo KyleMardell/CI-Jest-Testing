@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const addition = require("../calc");
+const { addition, subtraction } = require("../calc");
 
 describe("Calculator", () => {
     describe("Addition function", () => {
@@ -14,7 +14,12 @@ describe("Calculator", () => {
         });
     });
     describe("Subtraction function", () => {
-
+            test("should return 6 for 29 - 23", () => {
+                expect(subtraction(29, 23)).toBe(6);
+            });
+            test("should return 42 for 100 - 58", () => {
+                expect(subtraction(100, 58)).toBe(42);
+            });
     });
     describe("Multiplication function", () => {
 
